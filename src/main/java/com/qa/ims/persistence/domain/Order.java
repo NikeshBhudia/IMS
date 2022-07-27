@@ -1,22 +1,19 @@
 package com.qa.ims.persistence.domain;
 
-import java.util.Date;
 import java.util.Objects;
 
 public class Order {
 	
 	private Long id;
-	private Date DueDate;
+	
 	private Long Customer_id;
 	
-	public Order(Date DueDate, Long Customer_id) {
-		this.setDueDate(DueDate);
+	public Order(Long Customer_id) {
 		this.setCustomer_id(Customer_id);
 	}
 
-	public Order(Long id, Date DueDate, Long Customer_id) {
+	public Order(Long id, Long Customer_id) {
 		this.setId(id);
-		this.setDueDate(DueDate);
 		this.setCustomer_id(Customer_id);
 	}
 
@@ -25,12 +22,6 @@ public class Order {
 	}
 	public void setId(Long id) {
 		this.id = id;
-	}
-	public Date getDueDate() {
-		return DueDate;
-	}
-	public void setDueDate(Date dueDate) {
-		DueDate = dueDate;
 	}
 	public Long getCustomer_id() {
 		return Customer_id;
@@ -41,12 +32,12 @@ public class Order {
 
 	@Override
 	public String toString() {
-		return "Order [id=" + id + ", DueDate=" + DueDate + ", Customer_id=" + Customer_id + "]";
+		return "Order [id=" + id + ", Customer_id=" + Customer_id + "]";
 	}
 
 	@Override
 	public int hashCode() {
-		return Objects.hash(Customer_id, DueDate, id);
+		return Objects.hash(Customer_id, id);
 	}
 
 	@Override
@@ -58,9 +49,10 @@ public class Order {
 		if (getClass() != obj.getClass())
 			return false;
 		Order other = (Order) obj;
-		return Objects.equals(Customer_id, other.Customer_id) && Objects.equals(DueDate, other.DueDate)
-				&& Objects.equals(id, other.id);
+		return Objects.equals(Customer_id, other.Customer_id) && Objects.equals(id, other.id);
 	}
+
+
 	
 	
 
