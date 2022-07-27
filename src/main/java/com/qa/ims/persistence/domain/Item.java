@@ -5,7 +5,7 @@ import java.util.Objects;
 public class Item {
 
 	private Long id;
-	private static String itemName;
+	private String itemName;
 	private double price;
 
 
@@ -29,12 +29,12 @@ public class Item {
 		this.id = id;
 	}
 
-	public static String getItemName() {
+	public String getItemName() {
 		return itemName;
 	}
 
 	public void setItemName(String itemName) {
-		Item.itemName = itemName;
+		this.itemName = itemName;
 	}
 
 	public double getPrice() {
