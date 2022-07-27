@@ -13,7 +13,6 @@ CREATE TABLE IF NOT EXISTS customers (
 
 CREATE TABLE IF NOT EXISTS orders (
     id INT(10) NOT NULL AUTO_INCREMENT,
-    DueDate DATE NOT NULL,
     Customer_id INT(10) NOT NULL,
     PRIMARY KEY (id),
     FOREIGN KEY (Customer_id) REFERENCES customers(id)
