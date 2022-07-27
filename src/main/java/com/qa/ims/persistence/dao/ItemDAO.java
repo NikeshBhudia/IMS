@@ -86,11 +86,7 @@ public class ItemDAO implements Dao<Item> {
 		}
 		return null;
 	}
-	/**
-	 * 
-	 * @param customer 
-	 * @return
-	 */
+
 	@Override
 	public Item update(Item item) {
 		try (Connection connection = DBUtils.getInstance().getConnection();
