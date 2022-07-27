@@ -31,34 +31,26 @@ public class OrderController implements CrudController<Order> {
 			}
 			return orders;
 		}
-
-		/**
-		 * Creates a customer by taking in user input
-		 */
 		
 		@Override 
 		public Order create() {
 			LOGGER.info("Please enter your Customer ID");
 			Long Customer_id = utils.getLong();
 			Order order = orderDAO.create(new Order(Customer_id));
-			LOGGER.info("Customer created");
+			LOGGER.info("Order Created");
 			return order;
 		}
 
-		/**
-		 * Updates an existing customer by taking in user input
-		 */
 		@Override
 		public Order update() {
 			LOGGER.info("Please enter the id of the order you would like to update");
 			Long id = utils.getLong();
 			LOGGER.info("Please enter the id");
 			Order order = orderDAO.update(new Order(id));
-			LOGGER.info("Customer updated");
+			LOGGER.info("Order Updated");
 			return order;
 		}
 	
-
 		/**
 		 * 
 		 * 
