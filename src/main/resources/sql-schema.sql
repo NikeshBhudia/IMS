@@ -6,7 +6,7 @@ USE ims ;
 
 CREATE TABLE IF NOT EXISTS customers (
     id INT(10) NOT NULL AUTO_INCREMENT,
-    first_name VARCHAR(40) NOT NULL,
+    firstName VARCHAR(40) NOT NULL,
     surname VARCHAR(40) NOT NULL,
     PRIMARY KEY (id)
 );
@@ -21,8 +21,8 @@ CREATE TABLE IF NOT EXISTS orders (
 
 CREATE TABLE IF NOT EXISTS item (
     id INT(10) NOT NULL AUTO_INCREMENT,
-    Item_name VARCHAR(40) NOT NULL,
-    Price DECIMAL NOT NULL,
+    itemName VARCHAR(40) NOT NULL,
+    price DECIMAL NOT NULL,
     PRIMARY KEY (id)  
 );
 
