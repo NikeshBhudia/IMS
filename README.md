@@ -1,5 +1,6 @@
-Coverage: 34%
-#Inventory Management System
+Coverage: 34%  
+
+  Inventory Management System
 
 This projcect represent an inventory managment system, within this system you are able to create, read, update and delete, customers, items, orders and you are able to add extra items to an order after an order has been created. The data entered is also saved on a SQL database which can be both created and accessed through the code provided.
 
