@@ -30,7 +30,7 @@ To do this select the "Path" variable under "System variables" and then, click "
 -When you have done this, your "Path" variable should look like the image below (make sure that there is a semi-colon before and after %JAVA_HOME%\bin). <br />
 
 MySQL:
--To download MySQL follow the link [https://dev.mysql.com/downloads/windows/installer/8.0.html] and download the link that says mysql-installer-community be sure not the download the one that mentions web. <br />
+-To download MySQL follow the link (https://dev.mysql.com/downloads/windows/installer/8.0.html) and download the link that says mysql-installer-community be sure not the download the one that mentions web. <br />
 -Upon the opening the installer you will see a system notifaction box acking you to acceot the changes into your system, click accept to proceed. <br />
 -Once the installer window is open choose the set up type as custom and click next. <br />
 - Next will be promted to select what software you would like to install: <br />
@@ -119,7 +119,8 @@ Add additional notes about how to deploy this on a live system
 ## Built With
 
 * [Maven](https://maven.apache.org/) - Dependency Management
-
+* [JDK](https://www.oracle.com/java/technologies/downloads/) - Develpment Environment
+* [MySQL](https://dev.mysql.com/downloads/windows/installer/8.0.html) - Databse Service
 ## Versioning
 
 We use [SemVer](http://semver.org/) for versioning.
@@ -127,6 +128,7 @@ We use [SemVer](http://semver.org/) for versioning.
 ## Authors
 
 * **Chris Perrins** - *Initial work* - [christophperrins](https://github.com/christophperrins)
+* **Nikesh Bhudia** - *Developer* - [NikeshBhudia](https://github.com/NikeshBhudia)
 
 ## License
 
