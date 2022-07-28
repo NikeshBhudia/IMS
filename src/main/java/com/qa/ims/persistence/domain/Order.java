@@ -5,18 +5,9 @@ import java.util.Objects;
 public class Order {
 	
 	private Long id;
-	
 	private Long customer_id;
-	
-	public Order(Long customer_id) {
-		this.setCustomer_id(customer_id);
-	}
-
-	public Order(Long id, Long customer_id) {
-		this.setId(id);
-		this.setCustomer_id(customer_id);
-	}
-
+	private Long OrderId;
+	private Long ItemId;
 	public Long getId() {
 		return id;
 	}
@@ -29,17 +20,26 @@ public class Order {
 	public void setCustomer_id(Long customer_id) {
 		this.customer_id = customer_id;
 	}
-
+	public Long getOrderId() {
+		return OrderId;
+	}
+	public void setOrderId(Long orderId) {
+		OrderId = orderId;
+	}
+	public Long getItemId() {
+		return ItemId;
+	}
+	public void setItemId(Long itemId) {
+		ItemId = itemId;
+	}
 	@Override
 	public String toString() {
-		return "Order [id=" + id + ", Customer_id=" + customer_id + "]";
+		return "Order [id=" + id + ", customer_id=" + customer_id + ", OrderId=" + OrderId + ", ItemId=" + ItemId + "]";
 	}
-
 	@Override
 	public int hashCode() {
-		return Objects.hash(customer_id, id);
+		return Objects.hash(ItemId, OrderId, customer_id, id);
 	}
-
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)
@@ -49,14 +49,12 @@ public class Order {
 		if (getClass() != obj.getClass())
 			return false;
 		Order other = (Order) obj;
-		return Objects.equals(customer_id, other.customer_id) && Objects.equals(id, other.id);
+		return Objects.equals(ItemId, other.ItemId) && Objects.equals(OrderId, other.OrderId)
+				&& Objects.equals(customer_id, other.customer_id) && Objects.equals(id, other.id);
 	}
 
 
-	
-	
-
-
-	
-	
 }
+	
+	
+	
