@@ -20,7 +20,7 @@ public class OrderDAO implements Dao<Order> {
 	public Order modelFromResultSet(ResultSet resultSet) throws SQLException {
 		Long id = resultSet.getLong("id");
 		Long Customer_id = resultSet.getLong("Customer_id");
-		return new Order(id, Customer_id );		
+		return new Order(id, Customer_id );	
 	}
 	/**
 	 * 
@@ -104,9 +104,8 @@ public class OrderDAO implements Dao<Order> {
 	public Order update(Order Order) {
 		try (Connection connection = DBUtils.getInstance().getConnection();
 				PreparedStatement statement = connection
-						.prepareStatement("UPDATE itemrecipt SET ItemId = ?, OrderId = ? WHERE id = ?");) {
-			statement.setLong(1, Order.getOrderId());
-			statement.setLong(2, Order.getItemId());
+						.prepareStatement("UPDATE orders SET Customer_id = ? WHERE id = ?");) {
+			statement.setLong(1, Order.getCustomer_id());
 			statement.setLong(3, Order.getId());
 			statement.executeUpdate();
 			return read(Order.getId());
@@ -114,7 +113,7 @@ public class OrderDAO implements Dao<Order> {
 			LOGGER.debug(e);
 			LOGGER.error(e.getMessage());
 		}
-		return null;	
+		return Order;	
 	}
 
 	/**
