@@ -9,7 +9,6 @@ import java.util.ArrayList;
 import java.util.List;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-
 import com.qa.ims.persistence.domain.Order;
 import com.qa.ims.utils.DBUtils;
 
@@ -21,7 +20,7 @@ public class OrderDAO implements Dao<Order> {
 	public Order modelFromResultSet(ResultSet resultSet) throws SQLException {
 		Long id = resultSet.getLong("id");
 		Long Customer_id = resultSet.getLong("Customer_id");
-		return new Order(id, Customer_id);		
+		return new Order(id, Customer_id );		
 	}
 	/**
 	 * 
@@ -32,7 +31,7 @@ public class OrderDAO implements Dao<Order> {
 	public List<Order> readAll() {
 		try (Connection connection = DBUtils.getInstance().getConnection();
 				Statement statement = connection.createStatement();
-				ResultSet resultSet = statement.executeQuery("SELECT * FROM orders");) {
+				ResultSet resultSet = statement.executeQuery("SELECT * FROM itemrecipt");) {
 			List<Order> order = new ArrayList<>();
 			while (resultSet.next()) {
 				order.add(modelFromResultSet(resultSet));
@@ -82,7 +81,7 @@ public class OrderDAO implements Dao<Order> {
 	public Order read(Long id) {
 		try (Connection connection = DBUtils.getInstance().getConnection();
 				PreparedStatement statement = connection.prepareStatement("SELECT * FROM orders WHERE id = ?");) {
-			statement.setLong(0, id);
+			statement.setLong(1, id);
 			try (ResultSet resultSet = statement.executeQuery();) {
 				resultSet.next();
 				return modelFromResultSet(resultSet);
@@ -102,19 +101,20 @@ public class OrderDAO implements Dao<Order> {
 	 * @return
 	 */
 	@Override
-	public Order update(Order order) {
+	public Order update(Order Order) {
 		try (Connection connection = DBUtils.getInstance().getConnection();
 				PreparedStatement statement = connection
-						.prepareStatement("UPDATE orders SET customer_id = ?, WHERE id = ?");) {
-			statement.setLong(1, order.getCustomer_id());
-			statement.setLong(2, order.getId());
+						.prepareStatement("UPDATE itemrecipt SET ItemId = ?, OrderId = ? WHERE id = ?");) {
+			statement.setLong(1, Order.getOrderId());
+			statement.setLong(2, Order.getItemId());
+			statement.setLong(3, Order.getId());
 			statement.executeUpdate();
-			return read(order.getId());
+			return read(Order.getId());
 		} catch (Exception e) {
 			LOGGER.debug(e);
 			LOGGER.error(e.getMessage());
 		}
-		return null;
+		return null;	
 	}
 
 	/**

@@ -6,8 +6,17 @@ public class Order {
 	
 	private Long id;
 	private Long customer_id;
-	private Long OrderId;
-	private Long ItemId;
+	private Long orderId;
+	private Long itemId;
+	
+	public Order(Long customer_id) {
+		this.customer_id = customer_id;
+	
+	}
+	public Order(Long orderId, Long itemId) {
+		this.orderId = orderId;
+		this.itemId = itemId;
+	}
 	public Long getId() {
 		return id;
 	}
@@ -21,24 +30,25 @@ public class Order {
 		this.customer_id = customer_id;
 	}
 	public Long getOrderId() {
-		return OrderId;
+		return orderId;
 	}
 	public void setOrderId(Long orderId) {
-		OrderId = orderId;
+		this.orderId = orderId;
 	}
 	public Long getItemId() {
-		return ItemId;
+		return itemId;
 	}
 	public void setItemId(Long itemId) {
-		ItemId = itemId;
+		this.itemId = itemId;
 	}
+	
 	@Override
 	public String toString() {
-		return "Order [id=" + id + ", customer_id=" + customer_id + ", OrderId=" + OrderId + ", ItemId=" + ItemId + "]";
+		return "Order [id=" + id + ", customer_id=" + customer_id + ", OrderId=" + orderId + ", ItemId=" + itemId + "]";
 	}
 	@Override
 	public int hashCode() {
-		return Objects.hash(ItemId, OrderId, customer_id, id);
+		return Objects.hash(itemId, orderId, customer_id, id);
 	}
 	@Override
 	public boolean equals(Object obj) {
@@ -49,7 +59,7 @@ public class Order {
 		if (getClass() != obj.getClass())
 			return false;
 		Order other = (Order) obj;
-		return Objects.equals(ItemId, other.ItemId) && Objects.equals(OrderId, other.OrderId)
+		return Objects.equals(itemId, other.itemId) && Objects.equals(orderId, other.orderId)
 				&& Objects.equals(customer_id, other.customer_id) && Objects.equals(id, other.id);
 	}
 
