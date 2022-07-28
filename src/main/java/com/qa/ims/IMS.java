@@ -33,7 +33,6 @@ public class IMS {
 		this.Item = new ItemController (itemDAO, utils);
 		final OrderDAO orderDAO = new OrderDAO();
 		this.Order = new OrderController (orderDAO, utils);
-		
 	}
 
 	public void imsSystem() {
