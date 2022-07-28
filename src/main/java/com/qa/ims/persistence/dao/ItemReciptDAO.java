@@ -106,17 +106,16 @@ public class ItemReciptDAO implements Dao<ItemRecipt> {
 	public ItemRecipt update(ItemRecipt ItemRecipt) {
 		try (Connection connection = DBUtils.getInstance().getConnection();
 				PreparedStatement statement = connection
-						.prepareStatement("UPDATE ItemRecipt SET ItemId = ?, OrderId = ? WHERE id = ?");) {
-			statement.setLong(1, ItemRecipt.getOrderId());
-			statement.setLong(2, ItemRecipt.getItemId());
-			statement.setLong(3, ItemRecipt.getId());
+						.prepareStatement("INSERT INTO itemrecipt(ItemId, OrderId) VALUE (?,?)");) {
+			statement.setLong(1, ItemRecipt.getItemId());
+			statement.setLong(2, ItemRecipt.getOrderId());
 			statement.executeUpdate();
 			return read(ItemRecipt.getId());
 		} catch (Exception e) {
 			LOGGER.debug(e);
 			LOGGER.error(e.getMessage());
 		}
-		return null;
+		return ItemRecipt;
 	}
 
 	/**
