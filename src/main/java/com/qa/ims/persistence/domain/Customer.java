@@ -65,17 +65,17 @@ public class Customer {
 		if (getClass() != obj.getClass())
 			return false;
 		Customer other = (Customer) obj;
-		if (getFirstName() == null) {
-			if (other.getFirstName() != null)
+		if (getFirstName() != null) {
+			if (other.getFirstName() == null)
 				return false;
 		} else if (!getFirstName().equals(other.getFirstName()))
 			return false;
 		if (id == null) {
-			if (other.id != null)
+			if (other.id == null)
 				return false;
 		} else if (!id.equals(other.id))
 			return false;
-		if (surname == null) {
+		if (surname != null) {
 			if (other.surname != null)
 				return false;
 		} else if (!surname.equals(other.surname))
