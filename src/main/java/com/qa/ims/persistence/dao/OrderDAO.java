@@ -31,7 +31,7 @@ public class OrderDAO implements Dao<Order> {
 	public List<Order> readAll() {
 		try (Connection connection = DBUtils.getInstance().getConnection();
 				Statement statement = connection.createStatement();
-				ResultSet resultSet = statement.executeQuery("SELECT * FROM itemrecipt");) {
+				ResultSet resultSet = statement.executeQuery("SELECT * FROM orders");) {
 			List<Order> order = new ArrayList<>();
 			while (resultSet.next()) {
 				order.add(modelFromResultSet(resultSet));

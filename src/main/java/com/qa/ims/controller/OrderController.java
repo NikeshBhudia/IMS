@@ -23,8 +23,7 @@ public class OrderController implements CrudController<Order>{
 			super();
 			this.orderDAO = orderDAO;
 			this.ItemReciptDAO = itemReciptDAO;
-			this.utils = utils;
-			
+			this.utils = utils;	
 		}
 
 
@@ -52,11 +51,9 @@ public class OrderController implements CrudController<Order>{
 			Long OrderId = utils.getLong();
 			LOGGER.info("Please enter the ItemId you would like to add");
 			Long ItemId = utils.getLong();
-			ItemRecipt order = ItemReciptDAO.create(new ItemRecipt(OrderId, ItemId));
+			Order order  = orderDAO.create(new Order(OrderId, ItemId));
 			LOGGER.info("Order Updated");
-			LOGGER.info(order);
-			return null;
-		
+			return order;
 		}
 		
 		@Override

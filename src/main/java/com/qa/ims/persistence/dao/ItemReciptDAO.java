@@ -48,7 +48,7 @@ public class ItemReciptDAO implements Dao<ItemRecipt> {
 	public ItemRecipt readLatest() {
 		try (Connection connection = DBUtils.getInstance().getConnection();
 				Statement statement = connection.createStatement();
-				ResultSet resultSet = statement.executeQuery("SELECT * FROM ItemRecipt ORDER BY id DESC LIMIT 1");) {
+				ResultSet resultSet = statement.executeQuery("SELECT * FROM itemrecipt ORDER BY id DESC LIMIT 1");) {
 			resultSet.next();
 			return modelFromResultSet(resultSet);
 		} catch (Exception e) {
@@ -67,7 +67,7 @@ public class ItemReciptDAO implements Dao<ItemRecipt> {
 	public ItemRecipt create(ItemRecipt ItemRecipt) {
 		try (Connection connection = DBUtils.getInstance().getConnection();
 				PreparedStatement statement = connection
-						.prepareStatement("INSERT INTO ItemRecipt(ItemId, OrderId) VALUES (?, ?)");) {
+						.prepareStatement("INSERT INTO itemrecipt(ItemId, OrderId) VALUES (?, ?)");) {
 			statement.setLong(1, ItemRecipt.getItemId());
 			statement.setLong(2, ItemRecipt.getOrderId());
 			statement.executeUpdate();
