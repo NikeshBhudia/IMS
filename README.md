@@ -101,6 +101,13 @@ SetUp:
 # git config --global user.email "[EMAIL]" <br />
 -If all step are followed your gitbash will be now read to use.
 
+Mavern:
+
+-To install mavern start by opening your EclipseIDE  
+-Open Eclipse
+-Go to Help -> Eclipse Marketplace
+-Search by Maven
+-Click "Install" button at "Maven Integration for Eclipse" section
 
 ### Installing
 
