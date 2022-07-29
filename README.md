@@ -70,21 +70,23 @@ Set Up:
 
 ### Installing
 
-A step by step series of examples that tell you how to get a development env running
+-To get the development environment running start of my scrolling to the top of this page and clicking on 'Code'.<br /> 
+-There it will take you to the main page and you will see a green button with the label 'Code', Click that. <br />
+-Upon clicking a drop down you will be presented with the HTTPS code, Copy that. <br />
+-Once copied head into your eclipse terminal (be sure to open the git bash terminal: accessed through the windows tab at the top). Be sure not be in a directory, if you are trying 'cd' will take you back. <br />
+-Paste 'git clone [HTTPS link you copied]' and press enter, give it a second and it will clone the repository down to your local machine. The default place for this will be in your users area. <br />
+-Once this step is complete head to Open Eclipse. <br />
+-Click File > Import  <br />
+-Type Maven in the search box under Select an import source: <br />
+-Select Existing Maven Projects. <br />
+-Click Next. <br />
+-Click Browse and select the folder that is the root of the Maven project <br />
+-Click Next. <br />
+-Click Finish. <br />
+-You will successfully imported your project.  <br />
+-To check if it works be sure to close any other projects and click the 'Run Runner' (green play) on the top or head into the runner file and Run through there. <br />
+-If the console displays the option for the IMS then it mean the code has been imported successfully.
 
-Say what the step will be
-
-```
-Give the example
-```
-
-And repeat
-
-```
-until finished
-```
-
-End with an example of getting some data out of the system or using it for a little demo
 
 ## Running the tests
 
@@ -115,7 +117,7 @@ Give an example
 
 ## Deployment
 
-Add additional notes about how to deploy this on a live system
+Upon cloning down the repositiory be sure to head into src/main/resources/sql-schema.sql and make sure the data there is the same as your personal SQL data so that the data bases can be created.
 
 ## Built With
 
