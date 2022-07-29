@@ -68,6 +68,40 @@ Set Up:
 -Scroll through the bottom panel until you see the Path panel, click Edit, then New and add (%MYSQL_HOME%\bin). Click ok. <br />
 -Finished. 
 
+GitBAsh:
+
+-In your browser of choice visit Git Bash download
+-Then select Windows <br />
+-Your download should begin automatically<br />
+-Find the installer that was downloaded and run it<br />
+-A window that looks like this should open, click Next<br />
+-Leave the install location as default and click Next<br />
+-Select the components shown here then click Next<br />
+-Start menu folder should be 'Git' then click Next<br />
+-Swap default editor from VIM to Notepad (this is because the default option Vim has a steep learning curve), then click Next<br />
+-Select Override default branch name to "main" then click Next<br />
+-Adjust where Git can be run from, selecting Use Git and optional Unix tools from the Command Prompt will allow you to use both Git Bash and command prompt for  version control, you can leave it on default if you'd prefer to only use Git Bash. <br />
+-In this case, select the option `Git from command line and 3rd party software` then click `Next` <br />
+-Select Use bundled OpenSSH then click Next<br />
+-Select Use OpenSSL library then click Next<br />
+-Select Checkout Windows-style then click Next<br />
+-Select Use MinTTY then click Next<br />
+-Select Default (fast-forward) then click Next<br />
+-Select Git Credential Manager CORE then click Next<br />
+-Tick Enable file system caching then click Next<br />
+-Tick Enable experimental build-in file system monitor then click Next<br />
+-Wait for Git to install<br />
+-Launch Git Bash and click Finish<br />
+
+SetUp:
+-Open Terminal<br />
+-(Make sure not to be in a repository, do this by typing git cd)<br />
+-Proceed to enter (Replace USERNAME AND EMAIL with your own details. This will be done globally so you wont have to do once you have set this up once on your system.<br />
+# git config --global user.name "[USERNAME]" <br />
+# git config --global user.email "[EMAIL]" <br />
+-If all step are followed your gitbash will be now read to use.
+
+
 ### Installing
 
 -To get the development environment running start of my scrolling to the top of this page and clicking on 'Code'.<br /> 
