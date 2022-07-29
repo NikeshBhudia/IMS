@@ -166,6 +166,7 @@ Upon cloning down the repositiory be sure to head into src/main/resources/sql-sc
 * [JDK](https://www.oracle.com/java/technologies/downloads/) - Develpment Environment
 * [MySQL](https://dev.mysql.com/downloads/windows/installer/8.0.html) - Databse Service
 ## Versioning
+* [Jira Access](https://nikeshbhudia.atlassian.net/jira/software/projects/IP/boards/3) - Click to access Jira
 
 We use [SemVer](http://semver.org/) for versioning.
 
